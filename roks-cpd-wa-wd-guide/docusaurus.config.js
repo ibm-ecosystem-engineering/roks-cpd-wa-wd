@@ -23,7 +23,7 @@ const config = {
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
 
-  baseUrl: "/Ananddas227/roks-cpd-wa-wd/",
+  baseUrl: "/roks-cpd-wa-wd/",
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
@@ -54,11 +54,7 @@ const config = {
       // Replace with your project's social card
       image: "img/docusaurus-social-card.jpg",
       navbar: {
-        title: "ROKS-cpd-wa-wd-install-guide",
-        logo: {
-          alt: "IBM Logo",
-          src: "img/ibm_blue.png",
-        },
+        title: "IBM ROKS-cpd-wa-wd-install-guide",
         items: [],
       },
       footer: {

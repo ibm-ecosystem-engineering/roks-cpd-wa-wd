@@ -43,7 +43,7 @@ To avoid CPD's pods being placed into the ODF worker pool, we can apply taints t
 2. You can run `oc get nodes` to see the names of the three nodes we need to taint
 3. Run the following command for EACH node (you will have to run this command a total of three times, once per node):
    ```
-   oc adm taint nodes <YOUR_NODE_NAME> node.ocs.openshift.io storage="true":NoSchedule
+   oc adm taint nodes <YOUR_NODE_NAME> node.ocs.openshift.io/storage="true":NoSchedule
    ```
 4. You can check that the taint has been applied by running the following command for each node and scrolling to the "Taints" section in the output:
    ```
@@ -71,7 +71,7 @@ We need to download the cpd-cli to apply our entitlement key before our second w
 4. Change into the newly extracted directory
 5. Login to the IBM registry
    ```
-   podman login cp.stg.icr.io -u cp -p <IBM_PRIVATE_ENTITLEMENT_KEY>
+   podman login cp.icr.io -u cp -p <IBM_PRIVATE_ENTITLEMENT_KEY>
    ```
 6. Spin up the olm-utils container and add the entitlement key to the global pull secret
    ```

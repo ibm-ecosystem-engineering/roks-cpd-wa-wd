@@ -5,7 +5,7 @@ sidebar_position: 4
 
 # Installing watsonx Assistant
 
-We will need to do 2 pre-install steps: setting up multicloud gateway and installing serverless knative eventing. Then we can install watsonx Assistant using our cpd-cli
+You will need to do 2 pre-install steps: setting up multicloud gateway and installing serverless knative eventing. Then you can install watsonx Assistant using our cpd-cli
 
 **Note:** When running cpd-cli commands, you'll have to be in the extracted directory where the cpd-cli package exists. We extracted this in a previous step.
 

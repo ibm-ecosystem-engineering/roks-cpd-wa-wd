@@ -3,15 +3,15 @@ sidebar_position: 3
 ---
 # Installing CPD 4.8.0
 
-We'll use Cloud Pak Deployer to automate this install. The documentation can be found at: <https://ibm.github.io/cloud-pak-deployer/>
+This tutorial uses Cloud Pak Deployer to automate the install of the CPD platform (version 4.8.0). The documentation can be found at: <https://ibm.github.io/cloud-pak-deployer/>
 
-1. On your Linux VM, pull the code for cloud-pak-deployer
+1. On your Linux VM, pull the code for Cloud Pak Deployer
 
    ```shell
    git clone --depth=1 https://github.com/IBM/cloud-pak-deployer.git
    ```
 
-2. Change into the cloud-pak-deployer directory and build the image (takes ~5-10 minutes)
+2. Change into the `cloud-pak-deployer` directory and build the image (takes roughly 5-10 minutes)
 
    ```shell
    cd cloud-pak-deployer
@@ -26,7 +26,7 @@ We'll use Cloud Pak Deployer to automate this install. The documentation can be 
    mkdir PATH_TO_CLOUD_PAK_DEPLOYER/cloud-pak-deployer/cpd-status
    ```
 
-4. Change directories into cpd-config and copy the following yaml config file, insert your information such as cluster and domain name:
+4. Change directories into cpd-config, copy the following yaml config file, and insert your information such as cluster and domain name:
 
    ```shell
    cd cpd-config
@@ -62,7 +62,7 @@ We'll use Cloud Pak Deployer to automate this install. The documentation can be 
     # ocp_storage_class_block: nfs-client
     ```
 
-5. Copy the second config file into the same directory:
+5. Copy the second yaml config file into the same directory:
 
    ```shell
    vi cp4d-480.yaml
@@ -375,7 +375,7 @@ We'll use Cloud Pak Deployer to automate this install. The documentation can be 
 
     ```
 
-6. Set the environment variables for your newly created directories, IBM Entitlement Key, and cluster login (ensure the login is in double quotes)
+6. Set the environment variables for the newly created directories, IBM Entitlement Key, and cluster login (ensure the login is in double quotes)
 
    ```shell
    export CONFIG_DIR=PATH_TO_CLOUD_PAK_DEPLOYER/cloud-pak-deployer/cpd-config
@@ -384,17 +384,23 @@ We'll use Cloud Pak Deployer to automate this install. The documentation can be 
    export CPD_OC_LOGIN="<YOUR_CLUSTER_LOGIN_COMMAND> --insecure-skip-tls-verify"
    ```
 
-7. Run cloud-pak-deployer (this will take between 1 to 2 hours)
+7. Run Cloud Pak Deployer (this will take roughly 1 to 2 hours)
 
    ```shell
    ./cp-deploy.sh env apply --accept-all-licenses
    ```
 
-   **Note:** If your deployer gets hung up on the "ODF CSV" step, we will have to delete the older operator group within openshift-storage
+   **Note:** If the deployer hangs on the "ODF CSV" step, check if the deployer has created a new operator group within the openshift-storage project
 
    ```shell
    oc project openshift-storage
+   oc get og
+   ```
+
+   If it has, delete the older operator group within openshift-storage
+
+   ```shell
    oc delete og openshift-storage-operatorgroup
    ```
 
-   You can run `oc get og` to check that only the newly created operator group exists
+   Run `oc get og` again to check that only the newly created operator group exists

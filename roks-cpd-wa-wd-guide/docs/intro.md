@@ -7,13 +7,11 @@ slug: /
 
 ## Getting started
 
-The goal of this tutorial is to provide the steps of installing watsonx Assistant and Watson Discovery on a OpenShift cluster on IBM Cloud. This includes installing IBM Cloud Pak for Data. The IBM Cloud Pak for Data version number used in this tutorial will be 4.8.0.
+The goal of this tutorial is to provide the steps of installing watsonx Assistant and Watson Discovery on a ROKS cluster on IBM Cloud. This includes installing IBM Cloud Pak for Data (CPD).
 
-**Note:** This tutorial refers to IBM Cloud Pak for Data as "CPD" in the future sections.
+## Prerequisites
 
-## What you'll need
-
-1. This tutorial uses a ROKS cluster on IBM Cloud. For the details of the cluster, see the "Provisioning an Openshift Cluster" step
+1. This tutorial uses a ROKS cluster on IBM Cloud. For the details of the cluster, see the "Provisioning an Openshift Cluster" step on the left-hand navigation bar of this page
 2. An IBM Entitlement Key: <https://myibm.ibm.com/products-services/containerlibrary>
    1. this is necessary for access to CPD and its cartridges (watsonx Assistant and Watson Discovery)
 3. A linux VM with the following:

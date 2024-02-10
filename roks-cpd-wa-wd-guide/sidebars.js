@@ -25,6 +25,8 @@ const sidebars = {
     "install-watsonx-Assistant",
     "install-Watson-Discovery",
     "login-to-cpd",
+    "user-access-roks-iam",
+    "user-access-cpd-instances"
   ],
 };
 
